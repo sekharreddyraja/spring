@@ -26,7 +26,7 @@ public class BeanAutoWiringByName {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// added new commint
+
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanAutoWiringByName.class);
 		A a = context.getBean(A.class);
 		a.doSomethisn();
