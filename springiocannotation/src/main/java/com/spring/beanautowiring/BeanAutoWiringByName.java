@@ -13,25 +13,26 @@ public class BeanAutoWiringByName {
 	B b() {
 		return new B("from b");
 	}
+
 	@Bean
 	B b1() {
 		return new B("from b1");
 	}
-	@Bean(autowire=Autowire.BY_NAME)
+
+	@Bean(autowire = Autowire.BY_NAME)
 	A a() {
 		return new A();
 	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(BeanAutoWiringByName.class);
-		A a=context.getBean(A.class);
+		// added new commint
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanAutoWiringByName.class);
+		A a = context.getBean(A.class);
 		a.doSomethisn();
 	}
-	
-	
-	
-	public static class A{
+
+	public static class A {
 		@Autowired
 		private B b;
 
@@ -39,10 +40,9 @@ public class BeanAutoWiringByName {
 			System.out.println(b.getMsg());
 		}
 	}
-	
-	
-	public static class B{
-		
+
+	public static class B {
+
 		private String msg;
 
 		public B(String msg) {
@@ -53,9 +53,7 @@ public class BeanAutoWiringByName {
 		public String getMsg() {
 			return msg;
 		}
-		
+
 	}
-	
-	
 
 }
